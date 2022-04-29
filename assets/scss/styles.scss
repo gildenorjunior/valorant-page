@@ -1,0 +1,115 @@
+// TIPOGRAFIA
+@font-face {
+  font-family: "OpenSans Bold";
+  src: url("/assets/fonts/OpenSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: "OpenSans Regular";
+  src: url("/assets/fonts/OpenSans-Regular.ttf");
+}
+
+// VARIAVEIS
+$red-light: #ff4656;
+$dark: #1f2326;
+$white: #fff;
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("/assets/image/fon.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.cabecalho {
+  height: 15vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 10%;
+
+  .titulo {
+    font-family: "OpenSans Bold";
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  #logo-icone {
+    width: 3.625rem;
+    height: 2.5rem;
+    cursor: pointer;
+  }
+
+  #logo-share {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+.container-principal {
+  height: 85vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .secao-lado-esquerdo {
+    display: flex;
+    flex-direction: column;
+    padding: 10% 0 0 20%;
+
+    h1 {
+      font-family: "OpenSans Bold";
+      font-size: 3.5rem;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 0.125rem white;
+    }
+
+    .cards {
+      display: flex;
+      gap: 5%;
+
+      .card-omen,
+      .card-sage,
+      .card-sova {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        font-family: "OpenSans Regular";
+        font-weight: bold;
+        font-size: 0.875rem;
+        color: #ff4656;
+
+        > span {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+
+  .secao-lado-direito {
+    display: flex;
+    justify-content: center;
+    img {
+      max-width: 60%;
+    }
+  }
+}
