@@ -67,12 +67,14 @@ body {
 .container-principal {
   height: 85vh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 
   .secao-lado-esquerdo {
     display: flex;
     flex-direction: column;
     padding: 10% 0 0 20%;
+    grid-area: 1 / 1 / 2 / 2;
 
     h1 {
       font-family: "OpenSans Bold";
@@ -89,6 +91,7 @@ body {
       .card-omen,
       .card-sage,
       .card-sova {
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -98,8 +101,18 @@ body {
         font-size: 0.875rem;
         color: #ff4656;
 
+        .img-card {
+          z-index: 1;
+        }
+
         > span {
           margin-top: 5px;
+        }
+
+        #contorno-img {
+          position: absolute;
+          bottom: 30px;
+          right: 7px;
         }
       }
     }
@@ -108,8 +121,24 @@ body {
   .secao-lado-direito {
     display: flex;
     justify-content: center;
+    grid-area: 1 / 2 / 3 / 3;
     img {
       max-width: 60%;
+    }
+  }
+
+  footer {
+    grid-area: 2 / 1 / 3 / 2;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 20%;
+    padding-bottom: 2%;
+
+    img {
+      max-width: 25px;
+      max-height: 25px;
+      margin-right: 20px;
+      cursor: pointer;
     }
   }
 }
